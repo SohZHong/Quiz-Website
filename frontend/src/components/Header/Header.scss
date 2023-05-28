@@ -1,0 +1,85 @@
+@import '../../variables.scss';
+
+
+.Header {
+    background-color: $darkThemeColor;
+    color: $white;
+    padding: $padding;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .Left{
+        width: 25%;
+        img{
+            content: $logo;
+            max-width: 50%;
+            height: auto;
+        }
+    }
+
+    .Mid{
+
+        width: 50%;
+
+        .search{
+            width: 100%;
+            display: flex;
+            background-color: $white;
+            border-radius: $bRadius+15px;
+            padding-right: $padding;
+
+            input{
+                font-size: $smallText;
+                border-radius: inherit;
+                width: inherit;
+                padding: $padding;
+                outline: none;
+                background-color: inherit;
+                border: none;
+                color: $lightGrey;
+            }
+
+            input:focus{
+                color: $grey;
+            }
+
+            .searchBtn {
+                margin: $margin - 10px;
+                padding: $padding;
+                border-radius: 50%;
+                background-color: inherit;
+                border: none;
+                font-size: $smallText;
+                cursor: pointer;
+                transition: $transitionEase background-color;
+            }
+
+            .searchBtn:hover{
+                background-color: $lightGrey;
+            }
+        }
+    }
+
+    .Right{
+
+        width: 25%;
+
+        .profile{
+            flex-direction: row;
+
+            @include center;
+
+            .dropdown {
+                margin: 0 $margin;
+                width: 35%;
+                .dropdown-toggle{
+                    max-width: 100%;
+                    text-overflow: ellipsis;
+                }
+            }
+
+        }
+    }
+
+}

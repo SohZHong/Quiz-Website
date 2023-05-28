@@ -1,0 +1,55 @@
+@import '../../../variables.scss';
+
+.exam-container{
+    @include center;
+
+    .exam-wrapper{
+      width: 1000px;
+      padding: calc($padding*5);
+      border-radius: $bRadius;
+      background-color:$darkThemeColor;
+      font-size:20px;
+      max-height: 100vh;
+      overflow-y:auto;
+
+      .exam-container-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $padding;
+
+        button {
+          @include greenButton;
+          padding: $padding;
+          font-size: calc($smallText*0.8);
+
+          &.disable{
+            filter: brightness(.6);
+            pointer-events: none;
+          }
+        }
+      }
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+
+      ::-webkit-scrollbar-track {
+        background: $grey; 
+      }
+      
+
+      ::-webkit-scrollbar-thumb {
+        background: $white; 
+        border-radius: 10em;
+      }
+      
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b8b4b4; 
+      }
+
+    
+}

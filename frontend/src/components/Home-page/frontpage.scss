@@ -1,0 +1,169 @@
+@import '../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Fira+Sans:wght@500&family=Poppins&family=Public+Sans&display=swap');   
+@import url('https://fonts.cdnfonts.com/css/arial-rounded-mt-bold');
+
+
+.homepage{
+    background-color: $darkThemeColor;
+    background-size: cover;
+    max-width: 100%;
+    color: $white;
+
+    .frontpgtxt_big{
+        font-family: $frontpage_font;
+        font-size: 5em;
+        font-weight: 600;
+    }
+    
+    .frontpgtxt_small{
+        font-family: $description_font;
+        font-size: 2em;
+        opacity: 85%;
+    }
+    
+    .frontpg_picture{
+        width:20em;
+        height:20em;
+    }
+
+    .component_txt{
+        font-family: $frontpage_font;
+        font-size: 3em;
+        font-weight: 400;
+    }
+
+    .frontpage-sct1-btn{
+        height:74px;
+        width:230px;
+        padding:$padding;
+        font-family: $description_font;
+        border-radius: $bRadius;
+        border:1px $white solid;
+        font-size: $mediumText;
+        font-weight: bold;
+        cursor:pointer;
+        transition: $transitionEase;
+
+        &:hover{
+            box-shadow: 0 20px 22px rgba(145, 92, 182, .4);
+        }
+
+        &.btn1{
+            color:rgb(0, 0, 0);
+            background-color: greenyellow;
+
+            &:hover{
+                background-color:#80ff00;
+            }
+    
+        }
+
+        &.btn2 {
+            background-color:rgb(45, 45, 216);
+
+            &:hover{
+                background-color:rgb(9, 9, 87);
+            }
+        }
+
+        &.btn3 {
+            background-color: #f77f00;
+
+            &:hover{
+                background-color: #d36d01;
+            }
+        }
+    
+    }
+
+    .frontpg_section{
+        @include center;
+        flex-direction: column;
+        padding:5em;
+        gap:4em;
+        text-align: center;
+
+        .logo{
+            content:$logo;
+            height:4em;
+            width:30em;
+            height:100%;
+        }
+    
+        .frontpg_grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));     
+            gap:8em;
+            max-width:100%;
+        }
+    
+    }
+
+    #aboutus_refpic1{
+        content:$firstpic;
+    }
+    
+    #aboutus_refpic2{
+        content:$secondpic;
+    }
+
+    .aboutus-section{
+        padding-top: $padding+210px;
+        @include center;
+        flex-direction: column;
+        text-align: center;
+
+        &:last-child{
+            padding-bottom: $padding+210px;
+        }
+
+        &:nth-child(1){
+            .aboutus_text{
+                font-size: 50px;
+            }
+        }
+
+        #Quizzeria_team{
+            padding:$padding+40px;
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));     
+            gap:8em;
+            max-width:100%;
+
+            .circle_object{
+                @include center;
+                flex-direction: column;
+                gap:50px;
+
+                & > img{
+                    max-width:216px;
+                    max-height:221px;
+                    border-radius: 50%;
+                }
+
+                #aboutus_human1{
+                    content:$zhehong;
+                }
+                
+                #aboutus_human2{
+                    content:$junian;
+                }
+
+                #aboutus_human3{
+                    content:$junshen;
+                }
+
+                #aboutus_human4{
+                    content:$seanhoe;
+                }
+
+                .team_font{
+                    font-size: $largeText;
+                    font-family: $frontpage_font;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+}

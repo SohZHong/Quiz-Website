@@ -1,0 +1,105 @@
+@import "../../../variables.scss";
+
+.title{
+    font-size: $largeText;
+
+    *{
+        margin-right: calc($margin + 10px);
+    }
+}
+
+.create-question-container{
+
+    margin: $margin 0;
+    padding: calc($padding / 2) calc($padding*2);
+    background-color: $inputThemeColor;
+    border-radius: $bRadius;
+
+    .container-display{
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            border: none;
+            font-size: $mediumText;
+        }
+    }
+}
+
+
+.input-container{
+
+    .input-field {
+
+        width: 50%;
+
+        .textarea {
+            width: 100%;
+            background: 0;
+            color: $white;
+            font-size: $smallText;
+            resize: none;
+            padding: $padding;
+            line-height: 1.5rem;
+            border-radius: $bRadius;
+            
+        }
+    }
+
+    .add-button{
+        border: none;
+        outline: none;
+        margin: calc($margin/2) 0;
+        padding: calc($padding * 2.5);
+        border-radius: $bRadius;
+        background-color: $inputThemeColor;
+        width: 100%;
+        color: $white;
+        font-weight: bold;
+
+        transition: all .2s ease-in-out;
+
+        svg {
+            margin-right: $margin;
+        }
+
+        &:hover{
+            filter: brightness(1.2);
+        }
+    }
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+
+    button{
+        padding: calc($padding*1.5);
+        border-radius: $bRadius;
+        color: $grey;
+        font-weight: bold;
+        font-size: $smallText;
+        transition: background-color .2s ease-in-out;
+    }
+
+    button:first-child{
+        margin-right: $margin;
+    }
+
+    .submit-button{
+        background-color: $green;
+
+        &:hover{
+            background-color: $greenHighlight;
+        }
+    }
+
+    .reset-button{
+        background-color: $dangerThemeColor;
+
+        &:hover{
+            background-color: $dangerHighlightThemeColor;
+        }
+    }
+}
+

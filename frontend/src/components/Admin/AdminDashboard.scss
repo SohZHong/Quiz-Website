@@ -1,0 +1,245 @@
+@import "../../variables.scss";
+
+.title{
+    font-size: calc($largeText*1.5);
+    font-weight: 900;
+    margin-bottom: calc($margin *2);
+}
+
+.content{
+    margin: $margin 0;
+    flex-direction: column;
+
+    @include center;
+
+    button {
+        color: $white;
+        font-weight: bold;
+        background-color: inherit;
+        border-radius: $bRadius;
+        transition: $transitionEase;
+    }
+
+    .green-button {
+        border: 1px solid $green;
+
+        &:hover{
+            background-color: $green;
+            color: $darkThemeColor;
+        }
+    }
+
+    .red-button {
+        border: 1px solid $dangerThemeColor;
+
+        &:hover{
+            background-color: $dangerThemeColor;
+            color: $darkThemeColor;
+        }
+    }
+
+    .blue-button {
+        border: 1px solid $blueHighlight;
+
+        &:hover{
+            background-color: $blueHighlight;
+            color: $darkThemeColor;
+        }
+    }
+
+    .statistics-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: $padding;
+        width: 100%;
+
+        & > div {
+            background-color: $blueHighlight;
+            border-radius: $bRadius;
+            padding: calc($padding*2);
+
+            h4 {
+                font-size: $mediumText;
+                font-weight: normal;
+            }
+
+            h1 {
+                font-size: $largeText*1.5;
+                font-weight: 900;
+            }
+        }
+    }
+
+    .user-container, .feedback-container{
+        .table-options {
+            margin-bottom: calc($margin*2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+
+    .user-container {
+        width: 100%;
+        margin: calc($margin*3) 0;
+
+        .table-options{
+
+            button {
+                padding: calc($padding*1.5);
+
+                &:not(:last-child){
+                    margin-right: $margin;
+                }
+            }
+            
+            .modification-options{
+                margin: $margin 0;
+    
+            }
+
+
+        }
+
+        .table-container{
+            
+            margin: $margin 0;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                table-layout: fixed;
+
+
+                th {
+                    text-align: left;
+                }
+
+                tr {
+
+                    &.editing{
+                        background-color: $blue;
+                    }
+
+                    &.disable{
+                        
+                        input, .edit-button{
+                            pointer-events: none;
+                            opacity: 0.6;
+                        }
+
+                    }
+
+                    td {
+                        white-space: nowrap;
+                        padding: calc($padding/2);
+    
+                        input {
+                            max-width: 100%;
+                            border: none;
+                            background-color: inherit;
+                            color: $white;
+                            font-size: $smallText;
+                            text-overflow: ellipsis;
+                        }
+
+                        .table-buttons{
+
+                            & > button {
+                                border: none;
+                                width: 40px;
+                                height: 40px;
+                                margin: 0 calc($margin/2);
+                                padding: $padding;
+                                border-radius: 50%;
+                                transition: $transitionEase background-color;
+
+                                & > svg {
+                                    max-width: 100%;
+                                    max-height: 100%;
+                                }
+
+                                &:hover{
+                                    background-color: $blueHighlight;
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .feedback-container{
+        width: 100%;
+
+        .feedback-headers{
+            display: grid;
+            padding: $padding;
+            grid-template-columns: 8fr 1fr 1fr;
+            font-weight: bold;
+            margin: $margin 0;
+        }
+        details{
+            border-radius: $bRadius;
+            margin: $margin 0;
+            border: 2px solid $blue;
+
+            summary {
+                list-style: none;
+                padding: $padding;
+                transition: $transitionEase background-color;
+                background-color: $blue;
+                cursor: pointer;
+
+                .row-header{
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: 8fr 1fr 1fr;
+                    
+                }
+            }
+
+            .details-content{
+                border-bottom-right-radius: $bRadius;
+                border-bottom-left-radius: $bRadius;
+                padding: $padding;
+                background-color: $darkThemeColor;
+
+                .details-header{
+                    display: grid;
+                    grid-template-columns: 10fr 2.5fr auto;
+                    grid-gap: calc($margin*2);
+                }
+
+                p{
+                    margin-top: $margin;
+                }
+            }
+
+        //     <details onClick={() => handleClick(id)}>
+        //     <summary style={{cursor: 'pointer',listStyleType: 'none'}}>
+        //     <div className='row-header' >
+        //       <span >{title}</span>
+        //       <span >{convertDate(posted)}</span>
+        //       <span >{read}</span>
+        //       <button className='red-button' onClick={() => handleDelete(id)}>Delete</button>
+        //     </div>
+        //     </summary>
+        //       <span>Posted by: {name}</span> 
+        //       <span>[{email}]</span>
+        //       <br/><br/>
+        //       <h4>Context:</h4>
+        //       <hr/>
+        //       <p>{content}</p>
+        //   </details>
+        
+        }
+    }
+      
+
+}
+

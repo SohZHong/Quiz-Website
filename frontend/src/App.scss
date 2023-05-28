@@ -1,0 +1,479 @@
+@import "./variables.scss";
+
+//General CSS
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font;
+}
+
+body {
+  background: $themeColor;
+}
+
+a{
+  color: $white;
+}
+
+a, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.dark{
+  background-color: $darkThemeColor;
+}
+
+.round{
+  border-radius: 50%;
+}
+
+.dark-button{
+  width: 40px;
+  height: 40px;
+  border: 2px solid $white;
+  border-radius: 50%;
+  background-color: $darkThemeColor;
+  transition: $transitionEase;
+
+  &:hover{
+      background-color: $white;
+
+      *{
+          color: $darkThemeColor;
+      }
+      
+  }
+}
+
+.label-text{
+  font-size: small;
+  cursor: text;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+//Profile Picture
+.user-profile{
+  max-width: 50px;
+  max-height: 50px;
+  background-position: 50% 50%;
+  clip-path: circle();
+}
+
+//Dropdown Menu
+.dropdown{
+
+  .dropdown-menu{
+      margin-top: $margin;
+      display: none;
+  }
+
+  .show {
+      display: block;
+  }
+
+  button {
+      display: inline-block;
+      color: $white;
+      background-color: inherit;
+      cursor: pointer;
+      font-size: $smallText;
+      padding: $padding;
+      transition: $transitionEase;
+  }
+
+  .dropdown-link{
+      background-color: $dropdownThemeColor;
+      box-shadow: 0px 0px 2px #fff;
+      border-radius: $bRadius;
+
+      a{
+          display: block;
+          text-decoration: none;
+          color: $white;
+          font-size: $smallText;
+          padding: $padding + 5px;
+          transition: $transitionEase;
+
+          *{
+              margin-right: $margin - 8px;
+          }
+
+      }
+
+      a:hover{
+          color: $darkThemeColor;
+          background-color: $white;
+      }
+
+      .danger-option{
+        color: $dangerThemeColor;
+      }
+
+      .danger-option:hover{
+        color: $darkThemeColor;
+        background-color: $dangerThemeColor;
+      }
+  }
+
+  .dropdown-divider{
+      filter: brightness(.3);
+  }
+}
+
+//Filter Button
+.filter-button {
+
+  select{
+    padding: $padding - 5px $padding;
+    background-color: $grey;
+    font-size: $smallText;
+    color: $white;
+    border-radius: $bRadius;
+  }
+}
+
+//Main Container
+.Container{
+  max-width: 80%;
+  margin: $margin auto;
+  padding: calc($padding*2);
+  min-height: $siteFooterHeight;
+  color: $white;
+}
+
+//Input field
+.input-field{
+
+  margin: calc($margin * 2) 0;
+
+  .input-border{
+      position: relative;
+
+      input {
+          width: 100%;
+          background: 0;
+          border: 0;
+          outline: 0;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid #ccc;
+          line-height: 1rem;
+          font-size: $smallText;
+          color: $white;
+
+          &~ .focus-border{
+              position: absolute; 
+              bottom: 0;
+              left: 50%; 
+              width: 0; 
+              height: 2px;
+              background-color: #4caf50; 
+              transition: 0.4s;
+          }
+
+          &:focus{
+              &~ .focus-border{
+                  width: 100%; 
+                  transition: 0.4s; 
+                  left: 0;
+              }
+          }
+      }
+  }
+}
+
+//File Uploader
+.drag-and-drop{
+  .drag-file-area{
+    border: 1px dashed $lightGrey;
+    padding: $padding;
+    margin: $margin 0;
+    border-radius: $bRadius;
+  
+    .drag-file-area-text {
+      @include center;
+      flex-direction: column;
+      padding: calc($padding*2);
+  
+      & > * {
+        margin: calc($margin/2) 0;
+      }
+  
+      .drop-file {
+        font-size: $mediumText;
+        font-weight: 800;
+      }
+  
+      .or {
+        font-size: $smallText;
+        font-weight: 500;
+      }
+      
+      .uploader-label {
+        border: 1px solid $yellow;
+        padding: $padding calc($padding*1.5);
+        border-radius: $bRadius;
+        transition: $transitionEase;
+        font-size: $smallText;
+        font-weight: 700;
+  
+        &:hover{
+          filter: brightness(.8);
+          background-color: $yellow;
+          color: black;
+        }
+      }
+    }
+  
+  }
+}
+
+//Individual File Item
+.file-item{
+  display: grid;
+  grid-template-columns: 10fr 1fr 0.5fr;
+  padding: calc($padding*1.5) calc($padding*2.5);
+  margin: $margin 0;
+  border-radius: $bRadius;
+  background-color: $inputThemeColor;
+
+  .file-name{
+    margin: 0 calc($margin);
+    display: flex;
+    align-items: center;
+    
+    svg {
+      font-size: calc($smallText*1.3);
+    }
+
+    & > span {
+      margin: 0 $margin;
+    }
+  }
+
+  .file-size {
+    @include center;
+  }
+
+  .button-container{
+
+    @include center;
+
+    & > button {
+      border: none;
+      font-size: $smallText;
+      color: $white;
+    }
+
+    // .file-download-button {
+
+    // }
+
+    // .file-delete-button {
+
+    // }
+
+  }
+}
+
+//Pagination
+.pagination-container{
+  margin: calc($margin*2) 0;
+  display: flex;
+  justify-content: space-between;
+
+  .row-options{
+      padding: $padding;
+      border: none;
+      background-color: inherit;
+      font-size: $smallText;
+      font-weight: bold;
+      color: $white;
+
+      option{
+          background-color: $dropdownThemeColor;
+      }
+  }
+
+  .pagination{
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+
+      li {
+          width: max-content;
+          font-weight: bold;
+          padding: $padding;
+          margin: 0 calc($margin/2);
+          border-bottom: 1px transparent;
+          transition: $transitionEase;
+          cursor: pointer;
+          
+          &:hover, &.active{
+              color: $white;
+              border-bottom:1px solid $blueHighlight;
+          }
+
+      }
+  }
+}
+
+//Modal
+.modal-overlay{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.6); //Black background with opacity
+  overflow-x: hidden;
+  z-index: 1; //Make background uninteractable
+  animation: slide-down 0.5s ease-in-out;
+  transition: all .5s ease-in-out;
+  @include center;
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.closed {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  .modal-body{
+    background-color: $inputThemeColor;
+    padding: calc($padding*2);
+    border-radius: $bRadius;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    .close-button-wrapper{
+
+      .close-button{
+        float: right;
+        border: none;
+        font-size: $largeText;
+      }
+    }
+
+
+  }
+}
+
+//Action Window
+.action-container {
+  @include center;
+  flex-direction: column;
+  padding: $padding;
+  color: $white;
+
+  .button-container{
+
+    @include center;
+
+    .confirmation-button, .cancel-button {
+      border:none;
+      color:$white;
+      font-size:$mediumText;
+      font-family:$description_font;
+      transition: $transitionEase background-color;
+    }
+
+    .confirmation-button {
+      background-color: darkgreen;
+
+      &:hover{
+        background-color: #4caf50;
+      }
+    }
+
+    .cancel-button{
+      background-color: $dangerThemeColor;
+
+      &:hover{
+        background-color: $dangerHighlightThemeColor;
+      }
+    }
+  }
+
+}
+
+//Results Window
+.results-modal-container{
+  @include center;
+  color: $white;
+
+  .result-modal-wrapper{
+    @include center;
+    flex-direction: column;
+
+    & > * {
+      margin: calc($margin/2) 0;
+    }
+
+    .result-status {
+      font-size: calc($largeText*1.3);
+    }
+
+    .total-score {
+      font-size: calc($largeText);
+      font-weight: 500;
+      filter: brightness(.8);
+    }
+
+    .score-percentage {
+      font-size: calc($largeText*2.2);
+      font-weight: 900;
+    }
+
+    .return-button {
+      font-size: $mediumText;
+      color: $lightBlueHighlight;
+      border: 1px solid $lightBlueHighlight;
+      padding: $padding;
+    }
+  }
+}
+
+//Question Display
+.display_question{ 
+  margin: $margin;
+  padding:2em;
+  background-color: $lightThemeColor;
+  border-radius: $bRadius;
+
+  .question_title{
+    color:$white;
+    font-weight: 700;
+    font-family: $font;
+  }
+
+  .question_answers{
+    font-family:$description_font;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 10px;
+    color:black;
+    border:none;
+    border-radius: 0%;
+    background-color: #4caf50;
+    min-height: 2em;
+    max-width:35em;
+    white-space: wrap;
+    word-wrap: break-word;
+  }
+}

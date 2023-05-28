@@ -1,0 +1,170 @@
+@import '../../../variables.scss';
+
+.title{
+    font-size: calc($largeText*1.5);
+    font-weight: 900;
+    margin-bottom: calc($margin *2);
+}
+
+button {
+    color: $white;
+    font-weight: bold;
+    background-color: inherit;
+    border-radius: $bRadius;
+    transition: $transitionEase;
+}
+
+.red-button {
+    border: 1px solid $dangerThemeColor;
+
+    &:hover{
+        background-color: $dangerThemeColor;
+        color: $darkThemeColor;
+    }
+}
+
+.blue-button {
+    border: 1px solid $blueHighlight;
+
+    &:hover{
+        background-color: $blueHighlight;
+        color: $darkThemeColor;
+    }
+}
+
+
+.student-profile-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $darkThemeColor;
+    padding: calc($padding*2);
+    border-radius: $bRadius;
+        
+    .student-wrapper{
+        display: flex;
+
+        img{
+            max-width: 200px;
+            max-height: 200px;
+            clip-path: circle();
+            background-position: 50% 50%;
+        }
+
+        .student-details {
+            padding: $padding;
+
+            * {
+                margin: $margin 0;
+            }
+
+            h2 {
+                font-size: $largeText;
+                font-weight: 800;
+            }
+
+            button {
+                padding: $padding;
+                background-color: inherit;
+                color: $white;
+                font-size: $smallText;
+            }
+        }
+    }
+
+    .student-details-wrapper{
+        display: flex;
+        margin: 0 auto;
+        width: 80%;
+
+        & > div {
+            display: grid;
+            align-items: center;
+            grid-template-rows: 1fr 1fr;
+            width: 100%;
+            background-color: $inputThemeColor;
+            border-radius: $bRadius;
+            margin: $margin;
+            padding: $padding calc($padding*2);
+
+            h4{
+                font-weight: normal;
+            }
+
+            h1 {
+                font-size: calc($largeText*1.3);
+                font-weight: 900;
+            }
+        }
+    }
+    
+}
+
+.student-class-container{
+    margin: calc($margin*2) 0;
+
+    .class-header-wrapper{
+        display: flex;
+        justify-content: space-between;
+        margin: $margin 0;
+
+        .join-button {
+            border: 1px solid $lightGrey;
+            padding: $padding;
+            transition: $transitionEase background-color color;
+            font-size: $smallText;
+
+            &:hover{
+                background-color: $lightGrey;
+                color: $darkThemeColor;
+            }
+        }
+
+    }
+
+    .table-options{
+        margin: $margin 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            padding: calc($padding*1.5);
+
+            &:not(:last-child){
+                margin-right: $margin;
+            }
+        }
+
+    }
+
+    .table-container{
+        
+        margin: $margin 0;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th {
+                text-align: left;
+            }
+
+            tr {
+
+                td {
+                    white-space: nowrap;
+                    padding: calc($padding/2) 0;
+                }
+
+                button {
+                    padding: $padding;
+                    min-width: 80%;
+
+                    &:disabled{
+                        cursor: auto;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,197 @@
+@import '../../../variables.scss';
+
+.Container{
+
+    .class_header{
+        margin: $margin 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .class-header-wrapper{
+            .class_name {
+                font-size: $largeText;
+                font-weight: 900;
+            }
+    
+            .class_description {
+                margin: calc($margin/2) 0;
+                font-weight: normal;
+            }
+        }
+
+        .return-button {
+            border: none;
+            @include center;
+
+            & > * {
+                margin: 0 calc($margin/2);
+            }
+
+            svg{
+                font-size: calc($largeText*1.1);
+            }
+
+            span {
+                font-size: $mediumText;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .class-wrapper {
+        display: grid;
+        grid-template-columns: 7fr 3fr;
+        grid-gap: 1em;
+    
+        & > div {
+            border-radius: $bRadius;
+            padding: 2em;
+            background-color: $darkThemeColor;
+            font-family: $font;
+            color: $white;
+        }
+    
+        .class_container{
+    
+            .class-navigator {
+
+                & > button {
+                    border: none;
+                    font-size: $mediumText;
+                    font-weight: 900;
+
+                    &:not(:first-child){
+                        margin-left: calc($margin*3);
+                    }
+
+                    &.disable{
+                        filter: brightness(.6);
+                    }
+                }
+
+            }
+    
+            .uploads-container{
+                padding: 2em 0;
+            }
+
+            .chapter_container{
+                padding:2em 0;
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap:4rem; 
+                flex-basis: 100%;
+
+                .chapter_box{
+                    display: grid;
+                    grid-template-rows: 1fr 2fr 1.3fr;
+                    padding: calc($padding/2);
+                    background-color: $inputThemeColor;
+                    border-radius: $bRadius;
+                    flex-basis: 100%;
+                    text-align: center;
+                    cursor: pointer;
+        
+                    & > * {
+                        margin: $margin 0;
+                    }
+    
+                    .chapter_title{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        word-wrap: break-word;
+                        max-width: 100%;
+                        font-weight: bold;
+                        font-size: $smallText;
+                    }
+        
+                    .chapter_description{
+                        filter: brightness(.9);
+                    }
+    
+                    .progress_bar{
+                        @include center;
+    
+                        .circular_bar{
+                            position: relative;
+                            height: 6em;
+                            width: 6em;
+                            border-radius: 50%;
+                            background: conic-gradient($white 3.6deg, $themeColor 0deg);
+                            @include center;
+                            justify-content: center;
+                            margin: 1em;
+            
+                            .innerCircle{
+                                background-color: $darkThemeColor;
+                                border: 1em solid $darkThemeColor;
+                                border-radius: 50%;
+                                width:5em;
+                                height:5em;
+                                @include center;
+                            }
+            
+                            .progress_value{
+                                position: relative;
+                                font-size: 1.2em;
+                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+                                .tick{
+                                    color: green;
+                                }
+                            }
+                        }
+                    }
+                }
+                  
+            }
+
+            .exam-container{
+                flex-direction: column;
+
+                & >* {
+                    margin-top: $margin;
+                }
+
+                .posted-date{
+                    margin-left: auto;
+                }
+
+                .exam-score-wrapper{
+                    padding: $padding;
+                    @include center;
+                    flex-direction: column;
+
+                    & > * {
+                        margin: $margin 0;
+                    }
+
+                    h3 {
+                        font-size: $largeText;
+                    }
+
+                    .score-progress{
+                        font-size: calc($largeText*2.5);
+                        font-weight: 900;
+                    }
+                }
+
+                .attempt-button{
+                    border: 1px solid $lightBlueHighlight;
+                    padding: calc($padding*1.5);
+                    font-size: calc($mediumText/1.3);
+
+                    &:hover{
+                        background-color: $lightBlueHighlight;
+                        color: $darkThemeColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+

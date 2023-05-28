@@ -1,0 +1,64 @@
+@import '../../variables.scss';
+
+.user-profile-wrapper {
+    display: flex;
+    align-items: center;
+    margin: $margin 0;
+
+    .user-profile-picture {
+        max-width: 8vw;
+        clip-path: circle();
+    }
+
+    .user-profile-name {
+        margin: 0 calc($margin*2);
+        font-size: calc($largeText*1.5);
+        font-weight: 700;
+    }
+}
+
+.info-wrapper{
+
+    margin: calc($margin*2) 0;
+
+    .info-title {
+        display: flex;
+        align-items: center;
+        font-size: $mediumText;
+
+        svg {
+            font-size: calc($mediumText*1.1);
+        }
+
+        h3 {
+            margin: $margin;
+            font-weight: 600;
+        }
+    }
+
+    .info-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: calc($margin*1.5);
+        padding: calc($padding*2);
+        border-radius: $bRadius;
+        background-color: $blueHighlight;
+
+        .info-item{
+
+            & > * {
+                margin: calc($margin/2) 0;
+            }
+
+            .label-text {
+                filter: brightness(.8);
+                font-weight: normal;
+            }
+
+            h3 {
+                font-size: calc($mediumText*1.1);
+                font-weight: 600;
+            }
+        }
+    }
+}

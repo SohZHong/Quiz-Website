@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//Fonts
+$font: 'Montserrat', sans-serif;
+$frontpage_font:'Futura PT', sans-serif;
+$description_font: 'Arial Rounded MT Bold', sans-serif;
+$largeText: 1.6em;
+$mediumText: 1.3em;
+$smallText: 1em;
+
+//Color Palette
+$white: #E3E3E3;
+$Pwhite: #ffffff;
+$lightGrey: #b8b3b3;
+$grey: #303843;
+$yellow : #f3e929;
+$green: #9fe756;
+$greenHighlight: #b5ff6c;
+$blue: #344A6E;
+$blueHighlight: #4B6A9F;
+$lightBlueHighlight: #7c9bd1;
+
+//Themes
+$themeColor: #142A4E;
+$darkThemeColor: #161B22;
+$lightThemeColor: #6289c9;
+$inputThemeColor: #303545;
+$dropdownThemeColor: #090909;
+$footerThemeColor: #05667B;
+$dangerThemeColor: #D65151;
+$dangerHighlightThemeColor: #d37777;
+$buttonThemeColor: #24354F;
+
+//Measurements
+$padding: 10px;
+$margin: 15px;
+$bRadius: 10px;
+$siteFooterHeight: 100vh;
+
+//Transitions
+$transitionEase: .2s ease-in-out;
+
+//Images
+$logo: url("./images/logo.png");
+$coin: url("./images/coin.png");
+$planet:url("./images/planet.png");
+$dna:url("./images/dna.png");
+$frontpage:url("./images/front page.png");
+$classpicture:url("./images/teacher_class.jpg");
+$chapter:url("./images/chapter.jpg");
+$leaderboard:url("./images/leaderboard.jpg");
+$firstpic:url("./images/aboutus_firstpic.jpg");
+$secondpic:url("./images/aboutus_secondpic.jpg");
+$zhehong:url("./images/Soh Zhe Hong.jpg");
+$junian:url("./images/Sia Jun Ian.jpg");
+$junshen:url("./images/Wong Jun Shen.jpg");
+$seanhoe:url("./images/Sean Hoe Kai Zher.jpg");
+$background1: url("./images/Background1.png");
+$background2: url("./images/Background2.png");
+$quiz: url("./images/quiz.png");
+$flashcard: url("./images/flashcard.png");
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin image($image-path, $max-width){
+    content: $image-path;
+    max-width: $max-width;
+    height: auto;
+}
+
+@mixin redButton{
+    color: $dangerThemeColor;
+    background-color: $dropdownThemeColor;
+    border: 1px solid $dangerThemeColor;
+    border-radius: $bRadius;
+    transition: $transitionEase;
+    transition: $transitionEase;
+    cursor: pointer;
+
+    &:hover{
+        color: $dropdownThemeColor;
+        background-color: $dangerThemeColor;
+    }
+}
+
+@mixin greenButton{
+    color: $green;
+    background-color: $dropdownThemeColor;
+    border: 1px solid $green;
+    border-radius: $bRadius;
+    transition: $transitionEase;
+    cursor: pointer;
+
+    &:hover{
+        color: $dropdownThemeColor;
+        background-color: $green;
+    }
+}

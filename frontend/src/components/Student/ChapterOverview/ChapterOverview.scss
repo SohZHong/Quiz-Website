@@ -1,0 +1,87 @@
+@import "../../../variables.scss";
+
+.chapter-overview-container{
+    @include center;
+    flex-direction: column;
+
+    .return-button {
+        border: none;
+        font-size: $largeText;
+
+        & > * {
+            margin: 0 calc($margin/2);
+        }
+    }
+
+    .chapter-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5vmin;
+        margin-top: 5vmin;
+        padding: $padding;
+
+    
+        .section-wrapper{
+            @include center;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: $padding;
+
+            .flashcard-sec, .quiz-sec {
+                padding: 3vmin;
+                flex-direction: column;
+                border: none;
+                max-height: 100%;
+                max-width: 100%;
+                border-radius: calc($bRadius*4);
+                font-size: 7vh;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 0 25px 0 0 rgb(25, 20, 41);
+        
+                &:active{
+                    transform: translateY(7px);
+                    box-shadow: 0 15px 0 0 rgb(12, 10, 20);
+                }
+            }
+    
+            .flashcard-sec{
+                background-color: #B047C2;
+    
+                &:hover{
+                    background-color: #E763FC;
+                }
+    
+                .flashcard-pic{
+                    content: $flashcard;
+                    height: auto;
+                    width: 100%;
+                    margin-top: 2.5vmin;
+                }
+            }
+        
+            .quiz-sec{
+                background-color: #89CB49;
+    
+                &:hover{
+                    background-color: #AFFF61;
+                }
+                
+                .quiz-pic{
+                    content: $quiz;
+                    height: auto;
+                    width: 100%;
+                    margin-top: 3vmin;
+                }
+            }
+
+            .flashcard-sec, .quiz-sec{
+
+                &.disable{
+                    pointer-events: none;
+                    filter: brightness(.7);
+                }
+            }
+        }
+    }
+}

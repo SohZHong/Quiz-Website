@@ -1,0 +1,101 @@
+@import '../../../variables.scss';
+
+.settings-container{
+    display: grid;
+    grid-template-columns: 40% auto;
+    column-gap: 2em;
+    background-color: $inputThemeColor;
+    padding: calc($padding*2);
+    border-radius: $bRadius;
+
+    .profile-container{
+        // background-color: $darkThemeColor;
+        // border-radius: $bRadius;
+        
+        @include center;
+
+        .profile_pic {
+            @include center;
+            width: fit-content;
+            color: transparent;
+            transition: $transitionEase;
+            border-radius: 50%;
+
+            .input-img{
+                display: none;
+            }
+
+            .picture {
+                position: absolute;
+                object-fit: cover;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                z-index: 0;
+                transition: opacity $transitionEase;
+            }
+
+            & > label {
+                color: white;
+                cursor: pointer;
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                visibility: hidden;
+            }
+
+            &:hover {
+
+                & > label {
+                    @include center;
+                    visibility: visible;
+                    z-index: 100;
+                    color: $white;
+                }
+
+                & > .picture {
+                    opacity: .3;
+                }
+            }
+        }
+    }
+
+    .input-container{
+        .input-field{
+            width: 90%;
+        }
+
+        .button-container {
+            & > button {
+                padding: $padding;
+                min-width: 20%;
+                background-color: inherit;
+                transition: $transitionEase;
+            }
+
+            .submit-button {
+                border: 1px solid $green;
+                color: $green;
+
+                &:hover {
+                    color: $darkThemeColor;
+                    background-color: $green;
+                }
+            }
+
+            .reset-button {
+                border: 1px solid $dangerThemeColor;
+                color: $dangerThemeColor;
+
+                &:hover {
+                    color: $darkThemeColor;
+                    background-color: $dangerThemeColor;
+                }
+            }
+        }
+    }
+    // <button className="submit-buttonn">Update</button>
+    // <button className="reset-button">Reset</button>
+    
+}
+

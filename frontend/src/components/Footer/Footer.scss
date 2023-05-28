@@ -1,0 +1,66 @@
+@import '../../variables.scss';
+
+.Footer {
+    
+    width: 100%;
+
+    .Top, .Bottom{
+        padding: $padding + 20px;
+    }
+
+    .Top{
+        background-color: $footerThemeColor;
+        text-align: center;
+
+        .description{
+
+            img{
+                content: $logo;
+                height: 100%;
+                max-width: 18%;
+                margin: $margin;
+            }
+
+            div{
+                color: $white;
+                font-style: italic;
+            }
+        }
+
+
+        .footer-options{
+            margin: $margin auto;
+            padding:$padding;
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));     
+            max-width:60%;
+
+            a {
+                margin: $margin 0;
+                font-size: $mediumText;
+            }
+
+        }
+
+    }
+
+    .Bottom{
+        background-color: $darkThemeColor;
+        text-align: center;
+        
+        *{
+            color: $white;
+        }
+
+        .social-icons{
+            margin: $margin;
+
+            a{
+                display: inline-block;
+                margin: 0 5px 0 5px;
+                padding: $padding;
+            }
+        }
+    }
+
+}

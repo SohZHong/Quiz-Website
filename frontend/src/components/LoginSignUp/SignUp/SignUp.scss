@@ -1,0 +1,164 @@
+@import '../../../variables.scss';
+
+.container {
+    background-image: $background2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: $font;
+    .mainbox {
+        position: relative;
+        margin: $margin*4;
+        padding: $padding*3;
+        width: 400px;
+        height: 550px;
+        background-color: $darkThemeColor;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        border-radius: $bRadius*2;
+        align-items: center;
+        
+        img {
+            content: $logo;
+            max-width: 60%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: calc($largeText*1.3);
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 80%;
+            margin: $margin*2;
+
+            #userrole{
+                @include center;
+                justify-content: space-around;
+                margin-bottom: ($margin + 5);
+                font-weight: bold;
+                
+                input[type='radio']{
+                    display: none;
+                }
+
+                input:checked + label{
+                    border: $Pwhite 1px solid;
+                    color: $Pwhite;
+                }
+
+                .student,.teacher{
+                    display: block;
+                    width: 29%;
+                    height: 7%;
+                    background-color: $blue;
+                    position: absolute;
+                    color: $white;
+                    border-radius: $bRadius;
+                    border: $blueHighlight 2px solid;
+                }
+                
+                .student{
+                    left: 20%;
+                
+                }
+                .teacher{
+                    right: 20%;
+                }
+                span{
+                    @include center;
+                    margin-top: calc($margin/2);
+                }
+            }
+
+            .input-field{
+                width: 90%;
+                margin: calc($margin/2) 0;
+            }
+
+            // #Susername,#Spassword,#password2,#useremail{
+            //     margin: 5px 70px ;
+            //     width: 70%;
+            //     min-width: 100px;
+            //     height: 100px;
+            //     border-radius: $bRadius;
+            //     background-color: $blue;
+            //     border: none;
+            //     font-size: 18px;
+            //     letter-spacing: 0.5px;
+            //     color: #eeeeee;
+            //     text-indent: 20px;
+            //     font-weight: 600;
+            // }
+
+            // #password2{
+            //     margin-bottom: 20px;
+            // }
+
+            // input:focus{
+            //     outline: none;
+            // }            
+
+            // ::placeholder{
+            //     color: #dddddd;
+            //     font-weight: 600;
+            //     text-indent: 20px;
+            //     letter-spacing: 0.5px;
+            //     opacity: 75%;
+            // }
+
+
+            // button {
+            //     border-radius: 15px;
+            //     border-style: none;
+            //     background-color: $buttonThemeColor;
+            //     color: #ffffff;
+            //     font-size: 20px;
+            //     font-weight: bold;
+            //     padding: 10px 30px;
+            //     letter-spacing: 1px;
+            //     text-transform: uppercase;
+            //     transition: transform 80ms ease-in;
+            //     cursor: pointer;
+            // }
+            .signup-button {
+                border: none;
+                background-color: $buttonThemeColor;
+                color: $white;
+                font-size: $mediumText;
+                font-weight: bold;
+                margin: ($margin/2);
+                padding: $padding calc($padding*3);
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                transition: background-color $transitionEase;
+
+                &:hover{
+                    background-color: $blueHighlight;
+                }
+
+                &:disabled{
+                    pointer-events: none;
+                    filter: brightness(.7);
+                }
+            }
+            span {
+                font-size: calc($smallText/1.2);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+

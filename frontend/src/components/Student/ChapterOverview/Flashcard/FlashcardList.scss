@@ -1,0 +1,166 @@
+@import '../../../../variables.scss';
+
+.flashcard-container{
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-image: $background1;
+
+    .flashcard_count{
+        position: absolute;
+        text-align: center;
+        background-color: #54579C;
+        width: auto;
+        top: 0;
+        left: 0;
+        padding: calc($padding*1.5);
+        font-size: 6vmin;
+        font-weight: 600;
+        border-radius: $bRadius;
+        color: $white;
+    }
+
+    .back-button{
+        position: relative;
+        text-align: center;
+        background-color: #54579C;
+        padding: calc($padding*1.5);
+        font-weight: 600;
+        font-size: 4.5vmin;
+        border: none;
+        transition: $transitionEase filter;
+
+        &:hover{
+            filter: brightness(1.2);
+        }
+    }
+
+    .card-grp{
+        width: 50vmin;
+        height: 80%;
+        aspect-ratio: 5 / 7;
+
+        .card{
+            height: 70vmin;
+            width: 50vmin;
+            aspect-ratio: 5 / 7;
+            position: absolute;
+            border-radius: 2vmin;
+            box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 25px;
+        }
+
+        .main-card{
+            z-index: 100;
+            position: absolute;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: opacity 0.6s;
+
+            .Fc_title{
+                margin: 4vw 1vw;
+                color: $themeColor;
+                font-size: 5vmin;
+                font-weight: bold;
+            }
+
+            .Fc_descbox{
+                margin: 50% 1vw 0;
+                height: 42vmin;
+                width: 45vmin;
+                position: absolute;
+                border-radius: 1vw;
+                background-color: #d9d9d9;
+                color: $themeColor;
+                font-weight: 500;
+                font-size: 2.1vmin;
+                
+                .Fc_desc{
+                    margin: 1vw 1vw;
+                    text-align: justify;
+                }
+            }
+
+        }
+
+        .firstcard{
+            z-index: 6;
+        }
+
+        .secondcard{
+            z-index: 5;
+        }
+
+        .thirdcard{
+            z-index: 4;
+        }
+
+        .main-card.next{
+            animation: goNext 0.6s linear;
+        }
+
+        .main-card.previous{
+            animation: goPrevious 0.6s linear;
+        }
+
+        .back-card1{
+            z-index: 0;
+            background-color: #54579C;
+            transform: rotate(20deg);
+
+        }
+
+        .back-card2{
+            z-index: 1;
+            background-color: #54579C;
+            transform: rotate(10deg);
+        }
+    }
+
+    .flashcard_button{
+        display: flex;
+        width: 70%;
+        flex-direction: row;
+        justify-content: space-between;
+        transform: translateY(-5vw) translateX(-1vw);
+
+        .flashcard-btn{
+            width: 6.5vw;
+            height: 6.5vw;
+            vertical-align: middle;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5vw;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: $blueHighlight;
+            color: $themeColor;
+        }
+
+        .flashcard-btn:hover{
+            background-color: $lightBlueHighlight;
+        }
+
+        
+    }
+    
+    
+}
+
+@keyframes goNext {
+    0% {transform: translateY(0%) translateX(0%) rotate(0deg); opacity: 1;}
+    90% {transform: translateY(60%) translateX(95%) rotate(100deg);opacity: 1;}
+    100% {transform: translateY(100%) translateX(110%) rotate(120deg); opacity: 0;}
+}
+
+@keyframes goPrevious {
+    0% {transform: translateY(-120%) translateX(-110%) rotate(-120deg);z-index: 10;}
+    10% {transform: translateY(-80%) translateX(-95%) rotate(-100deg);z-index: 10;}
+    100% {transform: translateY(0%) translateX(0%) rotate(0deg);z-index: 10;}
+}

@@ -1,0 +1,59 @@
+@import '../../variables.scss';
+
+.Container {
+
+    .error-container{
+        height: 100vh;
+        @include center;
+
+        .error-wrapper{
+            display: grid;
+            grid-template-columns: auto auto;
+
+            .error-text{
+
+                height: inherit;
+
+                & > * {
+                    margin: calc($margin*2) 0;
+                }
+
+                h1 {
+                    font-size: calc($largeText*3.5);
+                    font-weight: 900;
+                }
+
+                h2 {
+                    font-size: calc($largeText*1.5);
+                    font-weight: bold;
+                }
+
+                .nav-container{
+                    display: inline-block;
+
+                    h3 {
+                        font-weight: 500;
+                    }
+
+                    .nav-links{
+                        display: flex;
+                        flex-direction: column;
+
+                        a {
+                            margin: calc($margin/2) 0;
+                            color: $yellow;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .error-image{
+                max-width: 45vw;
+                object-fit: cover;
+            }
+        }
+
+
+    }
+    
+}

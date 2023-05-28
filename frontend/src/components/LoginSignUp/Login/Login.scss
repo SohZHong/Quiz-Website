@@ -1,0 +1,83 @@
+@import '../../../variables.scss';
+
+.login-container {
+    background-image: $background1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+    .mainbox {
+        position: relative;
+        margin: $margin*4;
+        padding: $padding*3;
+        width: 400px;
+        height: 550px;
+        background-color: $darkThemeColor;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        border-radius: $bRadius*2;
+        align-items: center;
+        
+        img {
+            content: $logo;
+            max-width: 60%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: calc($largeText*1.3);
+            font-weight: bold;
+        }
+
+        form {
+            flex-direction: column;
+            width: 100%;
+            height: 80%;
+            margin: 0 $margin*2;
+
+            @include center;
+
+            .input-field{
+                width: 90%;
+            }
+
+            .options {
+                display: flex;
+                width: 100%;
+
+                & > * {
+                    width: inherit;
+                    font-size: calc($smallText/1.2);
+                    margin: $margin 0;
+                    @include center;
+                }
+            }
+
+            .signup-button {
+                border: none;
+                background-color: $buttonThemeColor;
+                color: $white;
+                font-size: $mediumText;
+                font-weight: bold;
+                margin: $margin;
+                padding: $padding calc($padding*3);
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                transition: background-color $transitionEase;
+
+                &:hover{
+                    background-color: $blueHighlight;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
